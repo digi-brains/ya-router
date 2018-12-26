@@ -14,7 +14,7 @@ YaRouter assumes 3 things.
 
 1. You are, through your server or document root config file, directing all traffic through a single entry point; such as `index.php`.
 
-2. You have a directory structure for your view files that reflects your information arcitecture. [See 1](#allviews)
+2. You have a directory structure for your view files that reflects your information arcitecture. [1](#allviews)
 
 
 
@@ -43,7 +43,7 @@ Example:
 
 ```
 
-3. Your view file names reflect your URL structure. For example, If your URL is `example.com/foo/bar/my-page`, YaRouter expects to find the view for this page at `path/to/templates/foo/bar/my-page.html`. [See 2](#anytype)
+3. Your view file names reflect your URL structure. For example, If your URL is `example.com/foo/bar/my-page`, YaRouter expects to find the view for this page at `path/to/templates/foo/bar/my-page.html`. [2](#anytype)
 
 **Note** YaRout intends to support passing query strings in the URL to a page template. As of now this is in development. If you find a bug here let me know and/or send me a pull request.
 
@@ -83,5 +83,5 @@ $r = new Router( $views, $type, $default  );
 require $r->template;
 ```
 ### Appendix
-1. <a name="allviews"></a>You can put all views in one folder if you prefer.
-2. <a name="anytype"></a>Your views can be any type. E.g., .htm, .html, .md, .php, etc...
+1. <a name="allviews"></a>_You can put all views in one folder if you prefer._
+2. <a name="anytype"></a>_Your views can be any type. E.g., .htm, .html, .md, .php, etc..._
