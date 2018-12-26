@@ -33,11 +33,11 @@ Example:
 	|
 	|__/services
 		  |
-		  |_service1.html 	(example.com/services/services1.html)
+		  |_service1.html 	(example.com/services/service1.html)
 		  |
-		  |_service2.html 	(example.com/services/services2.html)
+		  |_service2.html 	(example.com/services/service2.html)
 		  |
-		  |_service3.html 	(example.com/services/services3.html)
+		  |_service3.html 	(example.com/services/service3.html)
 
 ...etc...
 
