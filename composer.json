@@ -12,7 +12,7 @@
         {
             "name": "Chris Brown",
             "email": "chris@digitalbrains.io",
-            "homepage": "https://github.com/digi-brains/ya-router/wiki"
+            "homepage": "https://github.com/digi-brains/ya-router"
         }
     ],
     "require": {
