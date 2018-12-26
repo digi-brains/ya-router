@@ -41,9 +41,7 @@ Example:
 
 ```
 
-3. 
-
-Your template/view file names reflect your URL structure. For example, If your URL is `mysite.com/foo/bar/my-page`, YaRouter expects to find the templat/view for this page at `path/to/templates/foo/bar/my-page.html`.
+3. Your template/view file names reflect your URL structure. For example, If your URL is `mysite.com/foo/bar/my-page`, YaRouter expects to find the templat/view for this page at `path/to/templates/foo/bar/my-page.html`.
 
 **Note 1** Your templates can be any type. E.g., .htm, .html, .md, .php, etc...
 
