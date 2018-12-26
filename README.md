@@ -2,7 +2,7 @@
 
 YaRouter is (yet another) PHP router. It's built to be simple and easy to use with minimal configuration.
 
-It does one thing only. It routs URL requests (Such as: `https://example.com/foo`) to a view/template (Such as: `/path/to/view/foo.html`).
+It does one thing only. It routs URL requests (Such as: `https://example.com/foo`) to a view/template (Such as: `/path/to/view/foo.html`). Keeping your URLs clean and friendly!
 
 ## Installation
 
