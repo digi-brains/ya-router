@@ -55,24 +55,31 @@ In your index.php file (or whatever file you are pointing your inbound requests 
 
 1. `$path` This is the path to the main directory where your templates/views are stored.
 
-2. `$type` This is the _type_ of teplate/view file you are calling. E.g., .html, .php, etc...
+2. `$type` This is the _type_ of teplate/view file you are calling (extension only). E.g., .html, .php, etc...
 
-3. `$default` The name of the default tempate/view file. Typically used for home or index page.
+3. `$default` The name of the default tempate/view file (without the extension). Typically used for home or index page.
 
+If you are using composer's autoload feature, start by `require`ing the autoloader script:
+
+`require __DIR__ . '/vendor/autoload.php';`
+
+
+Then `use` the YaRouter\Router.
+
+The router has one property available `template`. So you will create a `new Router()` object with your parameters and then `require` the template.
 
 **Example:**
 
 ```
 <?php
+require __DIR__ . '/vendor/autoload.php';
 
 use YaRouter\Router;
 
-$views = 'app/ui/pages';
+$views = 'path/to/views';
 $type = 'html';
 $default = 'index';
 
-
-// Call the router
 $r = new Router( $views, $type, $default  );
 require $r->template;
 ```
