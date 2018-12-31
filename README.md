@@ -6,13 +6,15 @@ It does one thing only. It routs URI/URL requests (Such as: `https://example.com
 
 ## Installation
 
-`composer require digi-brains/ya-router 1.0.0`
+Current version is 1.1.0
+
+`composer require digi-brains/ya-router 1.1.1`
 
 ## Overview
 
 YaRouter assumes 3 things.
 
-1. You are, through your server or document root config file, directing all traffic through a single entry point; such as `index.php`.
+1. You are, through your server or document root config file, directing all traffic through a single entry point/bootstrap file; such as `index.php`.
 
 2. You have a directory structure for your view files that reflects your information arcitecture. [1](#allviews)
 
