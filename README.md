@@ -16,8 +16,6 @@ YaRouter assumes 3 things.
 
 2. You have a directory structure for your view files that reflects your information arcitecture. [1](#allviews)
 
-
-
 Example:
 
 ```
@@ -43,28 +41,31 @@ Example:
 
 ```
 
-3. Your view file names reflect your URL structure. For example, If your URL is `example.com/foo/bar/my-page`, YaRouter expects to find the view for this page at `path/to/templates/foo/bar/my-page.html`. [2](#anytype)
-
-**Note** YaRout intends to support passing query strings in the URL to a page template. As of now this is in development. If you find a bug here let me know and/or send me a pull request.
+3. Your views file names reflect your URL structure. For example, If your URL is `example.com/foo/bar/my-page`, YaRouter expects to find the view for this page at `path/to/templates/foo/bar/my-page.html`. [2](#anytype)
 
 ## Documentation
 
-In your _index.php_ file (or whatever file you are pointing your inbound requests to) you need to pass the router 3 parameters.
+Set up your _index.php_ file (or whatever file you are pointing your inbound requests to).
 
-1. `$path` This is the path to the main directory where your views are stored.
+**If you are using an autoloader, like composer**
+
+Start by `require`-ing the autoloader script: `require __DIR__ . '/vendor/autoload.php';`.
+
+Then `use` the YaRouter\Router.
+
+**If you sre not using an autoloader**
+
+Just `include` the Router.php script
+
+Next define your parameters:
+
+1. `$views` This is the path to the main directory where your views are stored.
 
 2. `$type` This is the _type_ of view file you are calling (extension only). E.g., .html, .php, etc...
 
 3. `$default` The name of the default view file (without the extension). Typically used for home or index page.
 
-If you are using composer's autoload feature, start by `require`-ing the autoloader script:
-
-`require __DIR__ . '/vendor/autoload.php';`
-
-
-Then `use` the YaRouter\Router.
-
-The router has one property available `template`. So you will create a `new Router()` object with your parameters and then `require` the template.
+Finally, create a `new Router()` object with your parameters and then call the `get_view` method.
 
 **Example:**
 
@@ -80,8 +81,10 @@ $type = 'html';
 $default = 'index';
 
 $r = new Router( $views, $type, $default  );
-require $r->template;
+$r->get_view();
 ```
+
 ### Appendix
-1. <a name="allviews"></a>_You can put all views in one folder if you prefer._
+
+1. <a name="allviews"></a>_You can put all views in one single folder if you prefer._
 2. <a name="anytype"></a>_Your views can be any type. E.g., .htm, .html, .md, .php, etc..._

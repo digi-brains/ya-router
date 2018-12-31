@@ -3,19 +3,30 @@ namespace YaRouter;
 
 class Router {
 
-    public function __construct( $view, $type, $default ) {
-        $rout = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-        $query = $_SERVER['QUERY_STRING'];
-        
-        if ($rout == '' || $rout == '/') {
-            $template = $view . '/' . $default . '.' . $type;
-        } elseif (!$query == '') {
-            //TODO - This probably doesn't work as expected
-            $template = $view . $rout . '.' . $type . '?' . $query;
+    private $view;
+    private $type;
+    private $default;
+
+    public function __construct( $router_view, $router_type, $router_default ) {
+        $this->view = $router_view;
+        $this->type = $router_type;
+        $this->default = $router_default;
+    }
+
+    public function get_view() {
+        $route = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+        $default_view = $this->view . '/' . $this->default . '.' . $this->type;
+
+        $custom_view = $this->view . $route . '.' . $this->type;
+
+        if ($route == '' || $route == '/' && file_exists($default_view)) {
+            require $default_view;
+        } elseif (file_exists($custom_view)) {
+            require $custom_view;
         } else {
-            $template = $view . $rout . '.' . $type;
+            header('HTTP/1.0 404 Not Found');
         }
-        $this->template = $template;
     }
 
 }
