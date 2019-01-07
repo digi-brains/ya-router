@@ -54,7 +54,7 @@ Start by `require`-ing the autoloader script: `require __DIR__ . '/vendor/autolo
 
 Then `use` the YaRouter\Router.
 
-**If you sre not using an autoloader**
+**If you're not using an autoloader**
 
 Just `include` the Router.php script
 
@@ -62,7 +62,7 @@ Just `include` the Router.php script
 
 1. `$views` This is the path to the main directory where your views are stored.
 
-2. `$type` This is the _type_ of view file you are calling (extension only). E.g., .html, .php, etc...
+2. `$type` This is the _type_ of view file you are calling (extension only). E.g., html, php, etc...
 
 3. `$default` The name of the default view file (without the extension). Typically used for home or index page.
 
