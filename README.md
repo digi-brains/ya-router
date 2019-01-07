@@ -6,17 +6,17 @@ It does one thing only. It routs URI/URL requests (Such as: `https://example.com
 
 ## Installation
 
-Current version is 1.1.0
+Current version is 1.1.2
 
-`composer require digi-brains/ya-router 1.1.1`
+`composer require digi-brains/ya-router 1.1.2`
 
 ## Overview
 
-YaRouter assumes 3 things.
+YaRouter assumes 2 things.
 
 1. You are, through your server or document root config file, directing all traffic through a single entry point/bootstrap file; such as `index.php`.
 
-2. You have a directory structure for your view files that reflects your information arcitecture. [1](#allviews)
+2. Your views file-names reflect your URL structure. For example, If your URL is `example.com/foo/bar/my-page`, YaRouter expects to find the view for this page at `path/to/templates/foo/bar/my-page.html`. [1](#anytype).
 
 Example:
 
@@ -43,7 +43,6 @@ Example:
 
 ```
 
-3. Your views file names reflect your URL structure. For example, If your URL is `example.com/foo/bar/my-page`, YaRouter expects to find the view for this page at `path/to/templates/foo/bar/my-page.html`. [2](#anytype)
 
 ## Documentation
 
@@ -59,7 +58,7 @@ Then `use` the YaRouter\Router.
 
 Just `include` the Router.php script
 
-Next define your parameters:
+**Next define your parameters:**
 
 1. `$views` This is the path to the main directory where your views are stored.
 
@@ -67,9 +66,9 @@ Next define your parameters:
 
 3. `$default` The name of the default view file (without the extension). Typically used for home or index page.
 
-Finally, create a `new Router()` object with your parameters and then call the `get_view` method.
+**Finally, create a** `new Router()` **object with your parameters and then call the** `get_view` **method.**
 
-**Example:**
+### Kitchen Sink Example:
 
 ```
 (index.php)
@@ -86,7 +85,6 @@ $r = new Router( $views, $type, $default  );
 $r->get_view();
 ```
 
-### Appendix
+#### Appendix
 
-1. <a name="allviews"></a>_You can put all views in one single folder if you prefer._
-2. <a name="anytype"></a>_Your views can be any type. E.g., .htm, .html, .md, .php, etc..._
+1. <a name="anytype"></a>_Your views can be any type. E.g., .htm, .html, .md, .php, etc..._
