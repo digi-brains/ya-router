@@ -4,14 +4,14 @@
   "description": "YaRouter is a very simple PHP router. It does exactly one thing; routs URL's to views.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:digi-brains/ya-router.git"
+    "url": "https://github.com/digi-brains/ya-router"
   },
   "homepage": "http://digi-brains.github.io/ya-router",
   "keywords": [
     "php",
     "router"
   ],
-  "author": "Digibrains",
+  "author": "Chris Brown <chris@digitalbrains.io> (https://digitalbrains.io)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/digi-brains/ya-router/issues"
