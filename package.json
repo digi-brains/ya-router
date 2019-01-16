@@ -1,0 +1,22 @@
+{
+  "name": "ya-router",
+  "version": "1.1.2",
+  "description": "YaRouter is a very simple PHP router. It does exactly one thing; routs URL's to views.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:digi-brains/ya-router.git"
+  },
+  "homepage": "http://digi-brains.github.io/ya-router",
+  "keywords": [
+    "php",
+    "router"
+  ],
+  "author": "Digibrains",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digi-brains/ya-router/issues"
+  },
+  "devDependencies": {
+
+  }
+}
