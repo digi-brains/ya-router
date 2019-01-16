@@ -1,7 +1,4 @@
 ![](https://img.shields.io/github/release/digi-brains/ya-router.svg?style=flat-square)
-<!---
-![](https://img.shields.io/badge/version-v1.1.2-green.svg?style=flat-square)
--->
 ![](https://img.shields.io/github/license/digi-brains/ya-router.svg?style=flat-square)
 ![](https://img.shields.io/github/issues/digi-brains/ya-router.svg?style=flat-square)
 
