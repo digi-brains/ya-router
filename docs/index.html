@@ -67,7 +67,7 @@
         <ol>
             <li>
                 <p>
-                    Set up your _index.php_ file (or whatever file you are pointing your inbound requests to). If you are using an autoloader, like composer Start by requiring the autoloader script: <code>require __DIR__ . '/vendor/autoload.php';</code>. Then <code>use</code> the <code>YaRouter\Router</code>. If you're not using an autoloader just <code>include</code> the Router.php script
+                    Set up your <code>index.php</code> file (or whatever file you are pointing your inbound requests to). If you are using an autoloader, like composer Start by requiring the autoloader script: <code>require __DIR__ . '/vendor/autoload.php';</code>. Then <code>use</code> the <code>DigiBrains\YaRouter</code>. If you're not using an autoloader just <code>include</code> the Router.php script
                 </p>
             </li>
             <li>
@@ -103,13 +103,13 @@
 <pre>
 require __DIR__ . '/vendor/autoload.php';
 
-use DigiBrains\Router;
+use DigiBrains\YaRouter;
 
 $views = 'path/to/views';
 $type = 'html';
 $default = 'index';
 
-$r = new Router( $views, $type, $default  );
+$r = new YaRouter( $views, $type, $default  );
 $r->get_view();
 </pre>
 
