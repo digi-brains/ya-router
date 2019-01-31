@@ -1,7 +1,7 @@
 <?php
-namespace YaRouter;
+namespace DigiBrains;
 
-class Router {
+class YaRouter {
 
     private $view;
     private $type;

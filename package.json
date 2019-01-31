@@ -1,6 +1,6 @@
 {
   "name": "ya-router",
-  "version": "v1.1.2",
+  "version": "v1.2.0",
   "description": "YaRouter is a very simple PHP router. It does exactly one thing; routs URL's to views.",
   "repository": {
     "type": "git",

@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>YaRouter</title>
+        <meta name="description" content="YaRouter is (yet another) PHP router. It's built to be simple and easy to use with minimal configuration.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            body {margin: auto; max-width: 64em; padding: 1em; font-family: sans-serif;}
+            h1, h2, h3, h4 {color: #4286f4;}
+            code, pre {background-color: #eee; padding: .25em;}
+            pre {background-color: #666; color: #eee; padding: 1em;}
+            a {color: red;}
+        </style>
+    </head>
+    <body>
+    <body>
+        <h1>YaRouter</h1>
+
+        <h2>
+            Overview
+        </h2>
+
+        <p>
+            YaRouter assumes 2 things.
+        </p>
+
+        <ol>
+            <li>
+                <p>You are, through your server or document root config file, directing all traffic through a single entry point/bootstrap file; such as <code>index.php</code>.<p>
+            </li>
+            <li>
+                <p>Your views file-names reflect your URL structure. For example, If your URL is <code>example.com/foo/bar/my-page</code>, YaRouter expects to find the view for this page at <code>path/to/templates/foo/bar/my-page.html</code>. [<a href="#anytype">1</a>].</p>
+                <p>
+                    Example:
+                </p>
+<pre>
+/views
+  |
+  |__index.html         (example.com)<-default view
+  |
+  |__/about
+  |   |
+  |   |_team.html       (example.com/about/team.html)
+  |   |
+  |   |_products.html   (example.com/about/products.html)
+  |
+  |__/services
+      |
+      |_service1.html   (example.com/services/service1.html)
+      |
+      |_service2.html   (example.com/services/service2.html)
+      |
+      |_service3.html   (example.com/services/service3.html)
+
+...etc...
+</pre>
+            </li>
+        </ol>
+        
+
+        <ol>
+            <li>
+                <p>
+                    Set up your _index.php_ file (or whatever file you are pointing your inbound requests to). If you are using an autoloader, like composer Start by requiring the autoloader script: <code>require __DIR__ . '/vendor/autoload.php';</code>. Then <code>use</code> the <code>YaRouter\Router</code>. If you're not using an autoloader just <code>include</code> the Router.php script
+                </p>
+            </li>
+            <li>
+                <p>
+                    Next create a <code>new YaRouter()</code> object and define your parameters. YaRouter requires 3 arguements:
+                    <ul>
+                        <li>
+                            <code>$views</code> This is the path to the main directory where all of your views are stored.
+                        </li>
+                        <li>
+                            <code>$type</code> This is the _type_ of view file you are calling (extension only). E.g., html, php, etc...
+                        </li>
+                        <li>
+                            <code>$default</code> The name of the default view file (without the extension). Typically used for home or index page.
+                        </li>
+                    </ul>
+
+                </p>
+            </li>
+            <li>
+                <p>
+                    Finally, call the <code>get_view</code> method.
+                </p>
+            </li>
+        </ol>
+
+        <h3>Kitchen Sink Example:</h3>
+
+        <p>This example assumes you're using an autoloader. Otherwise just include the YaRouter class in your bootstrap file.</p>
+
+        <p><b>(index.php)</b></p>
+
+<pre>
+require __DIR__ . '/vendor/autoload.php';
+
+use DigiBrains\Router;
+
+$views = 'path/to/views';
+$type = 'html';
+$default = 'index';
+
+$r = new Router( $views, $type, $default  );
+$r->get_view();
+</pre>
+
+        <h4>Appendix</h4>
+
+        <p id="anytype">
+            1 <em>Your views can use any extension. E.g., .htm, .html, .md, .php, etc..., but they must all be the same type.</em>
+        </p>
+    </body>
+</html>
