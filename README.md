@@ -15,7 +15,7 @@ Via composer.json
 ```
 {
     "require": {
-        "digi-brains/ya-router" : "1.2.0"
+        "digi-brains/ya-router" : "1.3.0"
     }
 }
 ```
