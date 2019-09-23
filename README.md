@@ -1,6 +1,6 @@
-![](https://img.shields.io/github/release/digi-brains/ya-router.svg?style=flat-square)
-![](https://img.shields.io/github/license/digi-brains/ya-router.svg?style=flat-square)
-![](https://img.shields.io/github/issues/digi-brains/ya-router.svg?style=flat-square)
+![](https://img.shields.io/github/release/sageworksstudio/ya-router.svg?style=flat-square)
+![](https://img.shields.io/github/license/sageworksstudio/ya-router.svg?style=flat-square)
+![](https://img.shields.io/github/issues/sageworksstudio/ya-router.svg?style=flat-square)
 
 # YaRouter
 
@@ -20,4 +20,4 @@ Via composer.json
 }
 ```
 
-[Read The Documentation](https://digi-brains.github.io/ya-router/)
+[Read The Documentation](https://sageworksstudio.github.io/ya-router/)

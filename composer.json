@@ -6,13 +6,13 @@
         "routing",
         "php"
     ],
-    "homepage": "https://github.com/digi-brains/ya-router",
+    "homepage": "https://github.com/sageworksstudio/ya-router",
     "license": "MIT",
     "authors": [
         {
             "name": "Chris Brown",
             "email": "chris@digitalbrains.io",
-            "homepage": "https://github.com/digi-brains/ya-router"
+            "homepage": "https://github.com/sageworksstudio/ya-router"
         }
     ],
     "require": {
