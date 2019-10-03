@@ -1,5 +1,5 @@
 {
-    "name": "digi-brains/ya-router",
+    "name": "sageworksstudio/ya-router",
     "description": "Simple PHP Router.",
     "keywords": [
         "router",
@@ -11,7 +11,7 @@
     "authors": [
         {
             "name": "Chris Brown",
-            "email": "chris@digitalbrains.io",
+            "email": "chris@sageworksstudio.com",
             "homepage": "https://github.com/sageworksstudio/ya-router"
         }
     ],
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "DigiBrains\\": "src/"
+            "SageworksStudio\\": "src/"
         }
     }
 }

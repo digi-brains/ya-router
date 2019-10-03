@@ -1,5 +1,5 @@
 <?php
-namespace DigiBrains;
+namespace SageworksStudio;
 
 class YaRouter {
 
