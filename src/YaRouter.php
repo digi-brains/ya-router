@@ -2,25 +2,34 @@
 namespace SageworksStudio;
 
 class YaRouter {
+    /**
+     * @var string
+     */
+    private $location;
 
-    private $view;
-    private $type;
+    /**
+     * @var string
+     */
     private $default;
 
-    public function __construct( $router_view, $router_type, $router_default ) {
-        $this->view = $router_view;
-        $this->type = $router_type;
-        $this->default = $router_default;
-    }
+    /**
+     * @var string
+     */
+    private $type;
 
-    public function get_view() {
-        $route = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    /**
+     * Create a new route
+     *
+     * @param string $location
+     * @param string $default
+     * @param string $type
+     */
+    public function get_view( $location, $default, $type ) {
+        $current_url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $default_view = $location . '/' . $default . '.' . $type;
+        $custom_view = $location . $current_url . '.' . $type;
 
-        $default_view = $this->view . '/' . $this->default . '.' . $this->type;
-
-        $custom_view = $this->view . $route . '.' . $this->type;
-
-        if ($route == '' || $route == '/' && file_exists($default_view)) {
+        if ($current_url == '' || $current_url == '/' && file_exists($default_view)) {
             require $default_view;
         } elseif (file_exists($custom_view)) {
             require $custom_view;
@@ -28,5 +37,4 @@ class YaRouter {
             header('HTTP/1.0 404 Not Found');
         }
     }
-
 }

@@ -75,13 +75,13 @@
                     Next create a <code>new YaRouter()</code> object and define your parameters. YaRouter requires 3 arguements:
                     <ul>
                         <li>
-                            <code>$views</code> This is the path to the main directory where all of your views are stored.
-                        </li>
-                        <li>
-                            <code>$type</code> This is the _type_ of view file you are calling (extension only). E.g., html, php, etc...
+                            <code>$location</code> This is the path to the main directory (without the trailing slash) where all of your views are stored.
                         </li>
                         <li>
                             <code>$default</code> The name of the default view file (without the extension). Typically used for home or index page.
+                        </li>
+                        <li>
+                            <code>$type</code> This is the _type_ of view file you are calling (without the dot). E.g., html, php, etc...
                         </li>
                     </ul>
 
@@ -89,7 +89,7 @@
             </li>
             <li>
                 <p>
-                    Finally, call the <code>get_view</code> method.
+                    Finally, call the <code>get_view()</code> method.
                 </p>
             </li>
         </ol>
@@ -105,12 +105,12 @@ require __DIR__ . '/vendor/autoload.php';
 
 use SageworksStudio\YaRouter;
 
-$views = 'path/to/views';
-$type = 'html';
+$location = 'path/to/views';
 $default = 'index';
+$type = 'html';
 
-$r = new YaRouter( $views, $type, $default  );
-$r->get_view();
+$r = new YaRouter();
+$r->get_view( $location, $default, $type );
 </pre>
 
         <h4>Appendix</h4>
